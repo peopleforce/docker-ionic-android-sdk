@@ -29,7 +29,7 @@ RUN apt-get update \
     && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
-    && npm install -g ionic@${IONIC_VERSION}
+    && npm install -g @ionic/cli@${IONIC_VERSION}
 
 # Install yarn
 RUN npm install -g yarn
