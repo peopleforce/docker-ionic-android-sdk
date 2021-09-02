@@ -29,8 +29,12 @@ RUN apt-get update \
     && curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
     && apt-get update \
     && apt-get install -y nodejs \
-    && npm install -g cordova ionic@${IONIC_VERSION} \
-    && cd /tmp \
+    && npm install -g cordova ionic@${IONIC_VERSION}
+
+# Install yarn
+RUN npm install -g yarn
+
+RUN cd /tmp \
     && curl -fSLk https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip -o sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
     && unzip sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \
     && mkdir /opt/android-sdk \
@@ -40,9 +44,9 @@ RUN apt-get update \
     && $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     && apt-get autoremove -y \
     && rm -rf /tmp/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \ 
-    && mkdir /ionicapp
+    && mkdir /app
 
-WORKDIR /ionicapp
+WORKDIR /app
 
 
 
