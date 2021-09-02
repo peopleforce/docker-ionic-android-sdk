@@ -1,9 +1,9 @@
 FROM ubuntu:xenial
 
-LABEL MAINTAINER="Weerayut Hongsa <kusumoto.com@gmail.com>"
+LABEL MAINTAINER="Andrew Cetinic <andrew@peopleforce.io>"
 
-ARG NODEJS_VERSION="10"
-ARG IONIC_VERSION="4.2.1"
+ARG NODEJS_VERSION="14"
+ARG IONIC_VERSION="6.17.0"
 ARG ANDROID_SDK_VERSION="3859397"
 ARG ANDROID_HOME="/opt/android-sdk"
 ARG ANDROID_BUILD_TOOLS_VERSION="26.0.2"
