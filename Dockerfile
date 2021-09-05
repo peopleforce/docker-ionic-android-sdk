@@ -16,7 +16,6 @@ ARG ANDROID_BUILD_TOOLS_VERSION="26.0.2"
 # 6) Add and set user for use by ionic and set work folder
 
 ENV ANDROID_HOME "${ANDROID_HOME}"
-ENV NG_CLI_ANALYTICS=ci
 
 RUN apt-get update \
     && apt-get install -y \
